@@ -51,6 +51,10 @@ namespace POOActivities
                 if (DateIsValid(day, month, value))
                     year = value;
             }
+
+            get {
+                return year;
+            }
         }
         
         public bool DateIsValid(int day, int month, int year)
