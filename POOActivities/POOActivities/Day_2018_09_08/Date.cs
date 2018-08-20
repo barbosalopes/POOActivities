@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace POOActivities
+namespace POOActivities.Day_2018_08_09
 {
 
     /*

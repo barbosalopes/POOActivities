@@ -5,9 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 
-namespace POOActivities
+namespace POOActivities.Day_2018_08_09
 {
-    // To make tick https://docs.microsoft.com/en-us/dotnet/api/system.timers.timer?redirectedfrom=MSDN&view=netframework-4.7.2
     class Clock
     {
         private Date date;

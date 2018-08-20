@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Reflection;
+using POOActivities.Day_2018_08_09;
+
 
 namespace POOActivities
 {
@@ -10,8 +12,8 @@ namespace POOActivities
         /// This class was created to call the function names dinamically 
         /// <see cref="T:POOActivities.Exercises.Run"/> function.
         /// </summary>
-        public Exercises()
-        {
+        public void Ex09_08_1(){
+            // TODO: Menu to interact with the ex 1
         }
 
         /// <summary>
@@ -21,8 +23,7 @@ namespace POOActivities
         /// O relógio deve ter métodos que possibilitem a atualização de horas e datas
         /// automaticamente conforme a passagem do tempo.
         /// </summary>
-        public void Ex09_08_2()
-        {
+        public void Ex09_08_2(){
             Clock clock = new Clock();
             string op = "";
             int s;
@@ -58,6 +59,8 @@ namespace POOActivities
                 }
             }
         }
+
+
 
         /// <summary>
         /// Get from the client and run the desired exercise.
