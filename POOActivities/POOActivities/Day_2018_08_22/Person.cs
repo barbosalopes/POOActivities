@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace POOActivities.Day_2018_08_22
@@ -8,6 +9,7 @@ namespace POOActivities.Day_2018_08_22
         private readonly Regex CPFRegex = new Regex("^\\d{3}\\.\\d{3}\\.\\d{3}\\-\\d{2}$");
 
         private string cpf;
+        private Account[] accounts;
 
         public string CPF{
             get{
@@ -22,6 +24,16 @@ namespace POOActivities.Day_2018_08_22
             else{
                 this.cpf = cpf;
             }
+
+            accounts = new Account[5];
+        }
+
+        public double GetFinantialPosition(){
+            double total = 0;
+            foreach (Account account in accounts){
+                total += account.Balance;
+            }
+            return total;
         }
     }
 }

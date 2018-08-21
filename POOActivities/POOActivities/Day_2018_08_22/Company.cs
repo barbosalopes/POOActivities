@@ -34,19 +34,19 @@ namespace POOActivities.Day_2018_08_22
             try{
                 fleet.SetValue(vehicle, fleet.Length);
             }
-            catch(IndexOutOfRangeException e){
+            catch(IndexOutOfRangeException){
                 throw new Exception("Fleet already full.");
             }
         }
 
-        private double GetTax(char type){
+        private double GetInsurenceByType(char type){
             switch(type){
                 case Vehicle.CarType:
-                    return CarTax;
+                    return CarInsurance;
                 case Vehicle.VanType:
-                    return VanTax;
+                    return VanInsurance;
                 case Vehicle.TruckType:
-                    return CarTax;
+                    return TruckInsurance;
                 default:
                     throw new Exception("Invalid vehicle type.");
             }
@@ -54,7 +54,7 @@ namespace POOActivities.Day_2018_08_22
 
         public double GetInsuranceValue(Vehicle vehicle){
             bool hasDiscount = DateTime.Today.Year - vehicle.FabricationYear > 5;
-            double value = vehicle.Price * GetTax(vehicle.Type);
+            double value = vehicle.Price * GetInsurenceByType(vehicle.Type);
             if(hasDiscount){
                 value *= OldVehicleDiscount;
             }

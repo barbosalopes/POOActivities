@@ -4,41 +4,47 @@ using System.Text;
 
 namespace POOActivities.Day_2018_08_22
 {
-    public struct Operation
-    {
-        public bool isDeposit;
+    public struct Operation{
+        public char type;
         public double value;
         public DateTime date;
+
     }
 
     public class Account
     {
-        List<Operation> operations;
         private double balance;
+        private List<Operation> operations;
+
+        public double Balance{
+            get{
+                return balance;
+            }
+        }
 
         public Account(){
             operations = new List<Operation>();
+            balance = 0;
         }
 
-        public double GetBalance(){
-            return 0;
-        }
-        
-        public Operation[] GetAccountStatement(){
-            return null;
+
+        public List<Operation> GetBankStatement(){
+            return operations;
         }
 
-        public override string ToString(){
-            StringBuilder accountString = new StringBuilder();
-            accountString.AppendLine("Total Balance: " + balance);
+        public string PrintBankStatement(){
+            StringBuilder statement = new StringBuilder();
 
-            accountString.AppendLine("Operations:");
+            statement.AppendLine("Total in account: " + balance);
+
             foreach(Operation operation in operations){
-                accountString.AppendLine();
-                accountString.Append(operation.isDeposit ? "Deposit" : "Claim");
-                accountString.Append(operation.value);
+                statement.AppendLine();
+                statement.Append(operation.type == 'D' ? "Deposit" : "Claim");
+                statement.Append("Value: " + operation.value);
             }
-            return accountString.ToString();
+            return statement.ToString();
         }
+
+
     }
 }
