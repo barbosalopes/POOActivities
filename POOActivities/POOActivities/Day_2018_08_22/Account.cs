@@ -27,11 +27,18 @@ namespace POOActivities.Day_2018_08_22
             balance = 0;
         }
 
-
+        /// <summary>
+        /// Gets the bank statement.
+        /// </summary>
+        /// <returns>The bank statement.</returns>
         public List<Operation> GetBankStatement(){
             return operations;
         }
 
+        /// <summary>
+        /// Prints the bank statement.
+        /// </summary>
+        /// <returns>The bank statement in string format.</returns>
         public string PrintBankStatement(){
             StringBuilder statement = new StringBuilder();
 

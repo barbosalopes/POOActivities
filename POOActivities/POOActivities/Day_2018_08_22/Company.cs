@@ -30,6 +30,10 @@ namespace POOActivities.Day_2018_08_22
             }
         }
 
+        /// <summary>
+        /// Adds a vehicle in the fleet.
+        /// </summary>
+        /// <param name="vehicle">Vehicle.</param>
         public void AddVehicle(Vehicle vehicle){
             try{
                 fleet.SetValue(vehicle, fleet.Length);
@@ -39,6 +43,11 @@ namespace POOActivities.Day_2018_08_22
             }
         }
 
+        /// <summary>
+        /// Gets the insurence by it's type.
+        /// </summary>
+        /// <returns>The insurence according it's type.</returns>
+        /// <param name="type">Type.</param>
         private double GetInsurenceByType(char type){
             switch(type){
                 case Vehicle.CarType:
@@ -52,6 +61,11 @@ namespace POOActivities.Day_2018_08_22
             }
         }
 
+        /// <summary>
+        /// Gets the insurance value of the given vehicle.
+        /// </summary>
+        /// <returns>The insurance value.</returns>
+        /// <param name="vehicle">Vehicle.</param>
         public double GetInsuranceValue(Vehicle vehicle){
             bool hasDiscount = DateTime.Today.Year - vehicle.FabricationYear > 5;
             double value = vehicle.Price * GetInsurenceByType(vehicle.Type);
@@ -61,6 +75,10 @@ namespace POOActivities.Day_2018_08_22
             return value;
         }
 
+        /// <summary>
+        /// Gets the expensive vehicle of the fleet.
+        /// </summary>
+        /// <returns>The expensive vehicle of the fleet.</returns>
         public Vehicle GetExpensiveVehicle(){
             Vehicle expensive;
 
@@ -80,6 +98,10 @@ namespace POOActivities.Day_2018_08_22
             return expensive;
         }
 
+        /// <summary>
+        /// Gets the total expense of the company.
+        /// </summary>
+        /// <returns>The total expense.</returns>
         public double GetTotalExpense(){
             double total = 0;
 

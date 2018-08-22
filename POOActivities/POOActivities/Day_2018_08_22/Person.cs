@@ -28,6 +28,10 @@ namespace POOActivities.Day_2018_08_22
             accounts = new Account[5];
         }
 
+        /// <summary>
+        /// Gets the finantial position.
+        /// </summary>
+        /// <returns>The finantial position.</returns>
         public double GetFinantialPosition(){
             double total = 0;
             foreach (Account account in accounts){
