@@ -51,7 +51,7 @@ namespace POOActivities.Day_2018_08_09
                 else{
                     minute++;
                 }
-                second--;
+                second -= 60;
             }
         }
 

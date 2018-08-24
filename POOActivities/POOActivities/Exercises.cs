@@ -8,12 +8,51 @@ namespace POOActivities
     public class Exercises
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:POOActivities.Exercises"/> class.
-        /// This class was created to call the function names dinamically 
-        /// <see cref="T:POOActivities.Exercises.Run"/> function.
+        /// Implemente a classe Data utilizada como exemplo na aula teórica,
+        /// considerando as operações:
+        ///     • Verificar validade da data
+        ///     • Adicionar dias a uma data
+        ///     • Dizer o dia da data no ano(1 a 366)
         /// </summary>
         public void Ex09_08_1(){
-            // TODO: Menu to interact with the ex 1
+            Date date = new Date();
+            string op = "";
+            int d;
+
+            while (op != "S")
+            {
+                Console.Clear();
+                Console.WriteLine("a or A - Add days to the date.");
+                Console.WriteLine("d or D - Print day on year.");
+                Console.WriteLine("u or P - Update the date.");
+                Console.WriteLine("v or V - Validate date.");
+                Console.WriteLine("s or S - Exit.");
+                Console.WriteLine();
+                Console.WriteLine(date);
+                Console.Write(date.DateIsValid() ? "Date is valid!" : "Date is not valid!");
+                Console.WriteLine();
+                Console.Write("Option: ");
+                op = Console.ReadLine().ToUpper();
+                switch (op)
+                {
+                    case "A":
+                        Console.Write("Type the amount of days to add:");
+                        while(!int.TryParse(Console.ReadLine(), out d)){
+                            Console.Write("Invalid day! Type again:");
+                        }
+                        date.AddDays(d);
+                        break;
+                    case "D":
+                    case "S":
+                        break;
+                    case "V":
+                        break;
+                    default:
+                        Console.WriteLine("Invalid Option.");
+                        break;
+
+                }
+            }
         }
 
         /// <summary>
@@ -28,7 +67,7 @@ namespace POOActivities
             string op = "";
             int s;
 
-            while (op != "s")
+            while (op != "S")
             {
                 Console.Clear();
                 Console.WriteLine("a or A - Add seconds to the timer.");
@@ -43,7 +82,55 @@ namespace POOActivities
                 switch(op){
                     case "A":
                         Console.Write("Type the amount of seconds to add:");
-                        s = int.Parse(Console.ReadLine());
+                        while (int.TryParse(Console.ReadLine(), out s)){
+                            Console.Write("Invalid day! Type again:");
+                        }
+                        clock.addSeconds(s);
+                        break;
+                    case "U":
+                    case "S":
+                        break;
+                    case "R":
+                        clock.reset();
+                        break;
+                    default:
+                        Console.WriteLine("Invalid Option.");
+                        break;
+
+                }
+            }
+        }
+
+        /// <summary>
+        /// Implemente uma classe Televisão que tenha métodos para ligar e
+        /// desligar, aumentar ou diminuir o volume(com mínimo de 0 e máximo de 100) e
+        /// subir ou baixar o canal(entre 1 e 83).        /// </summary>
+        public void Ex09_08_3()
+        {
+            Clock clock = new Clock();
+            string op = "";
+            int s;
+
+            while (op != "S")
+            {
+                Console.Clear();
+                Console.WriteLine("l or L - Turn on the Television.");
+                Console.WriteLine("u or U - Update the clock.");
+                Console.WriteLine("r or R - Reset the clock.");
+                Console.WriteLine("s or S - Exit.");
+                Console.WriteLine();
+                Console.WriteLine(clock);
+                Console.WriteLine();
+                Console.Write("Option: ");
+                op = Console.ReadLine().ToUpper();
+                switch (op)
+                {
+                    case "A":
+                        Console.Write("Type the amount of seconds to add:");
+                        while (int.TryParse(Console.ReadLine(), out s))
+                        {
+                            Console.Write("Invalid day! Type again:");
+                        }
                         clock.addSeconds(s);
                         break;
                     case "U":
@@ -70,6 +157,9 @@ namespace POOActivities
             string date = "", ex = "", exFunc = "";
             MethodInfo method;
 
+            Console.WriteLine("Welcome to the POO exercises! Type any key to continue.");
+            control = Console.ReadKey();
+
             do
             {
                 try
@@ -83,7 +173,6 @@ namespace POOActivities
                         ex = Console.ReadLine();
 
                         exFunc = "Ex" + date + "_" + ex;
-                    
                     }
                     method = GetType().GetMethod(exFunc);
                     method.Invoke(this, null);

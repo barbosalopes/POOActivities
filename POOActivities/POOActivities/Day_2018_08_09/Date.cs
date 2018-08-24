@@ -57,6 +57,10 @@ namespace POOActivities.Day_2018_08_09
             }
         }
         
+        public bool DateIsValid(){
+            return DateIsValid(day, month, year);
+        }
+
         public bool DateIsValid(int day, int month, int year)
         {
             if (year < 0)
@@ -86,6 +90,8 @@ namespace POOActivities.Day_2018_08_09
                 throw new Exception("Error while trying to create date: " + e.Message);
             }
         }
+
+        public Date() : this(1, 1, 2000) { }
 
         public void AddDays(int days){
             day += days;
