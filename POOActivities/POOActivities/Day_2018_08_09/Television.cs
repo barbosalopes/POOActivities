@@ -24,8 +24,9 @@ namespace POOActivities.Day_2018_08_09
         }
 
         public bool ChangeChannel(int c){
+            if (!turnedOn) return false;
             if(c < 1 || c > 83){
-                throw new Exception("The channel {c} is not avaible.");
+                throw new Exception("The channel " + c + " is not avaible.");
             }
             else {
                 channel = c;
@@ -41,14 +42,12 @@ namespace POOActivities.Day_2018_08_09
             return ChangeChannel(channel - 1);
         }
 
-        public bool ChangeVolume(int v)
-        {
-            if (v < 1 || v > 83)
-            {
-                throw new Exception("Volume {v} invalid.");
+        public bool ChangeVolume(int v){
+            if (!turnedOn) return false;
+            if (v < 1 || v > 83){
+                throw new Exception("Volume " + v + " invalid.");
             }
-            else
-            {
+            else{
                 volume = v;
                 return true;
             }
@@ -58,9 +57,17 @@ namespace POOActivities.Day_2018_08_09
             return ChangeVolume(volume+ 1);
         }
 
-        public bool DecreaseVolume()
-        {
+        public bool DecreaseVolume(){
             return ChangeVolume(volume - 1);
+        }
+
+        public override string ToString(){
+            if (turnedOn) {
+                return "Television: \nVolume: " + volume + "\nChannel: " + channel;
+            }
+            else{
+                return "Television: Off";
+            }
         }
     }
 }

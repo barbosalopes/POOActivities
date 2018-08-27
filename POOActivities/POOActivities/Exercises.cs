@@ -104,40 +104,49 @@ namespace POOActivities
         /// <summary>
         /// Implemente uma classe Televisão que tenha métodos para ligar e
         /// desligar, aumentar ou diminuir o volume(com mínimo de 0 e máximo de 100) e
-        /// subir ou baixar o canal(entre 1 e 83).        /// </summary>
+        /// subir ou baixar o canal(entre 1 e 83).
+        /// </summary>
         public void Ex09_08_3()
         {
-            Clock clock = new Clock();
+            Television television = new Television();
             string op = "";
             int s;
 
-            while (op != "S")
-            {
+            while (op != "S"){
                 Console.Clear();
-                Console.WriteLine("l or L - Turn on the Television.");
-                Console.WriteLine("u or U - Update the clock.");
-                Console.WriteLine("r or R - Reset the clock.");
+                Console.WriteLine("on or ON - Turn on the television.");
+                Console.WriteLine("off or OFF - Turn off the television.");
+                Console.WriteLine("ic or IC - Increase the channel.");
+                Console.WriteLine("dc or DC - Decrease the channel.");
+                Console.WriteLine("iv or IV - Increase the volume.");
+                Console.WriteLine("dv or DV - Decrease the volume.");
                 Console.WriteLine("s or S - Exit.");
                 Console.WriteLine();
-                Console.WriteLine(clock);
+                Console.WriteLine(television);
                 Console.WriteLine();
                 Console.Write("Option: ");
                 op = Console.ReadLine().ToUpper();
                 switch (op)
                 {
-                    case "A":
-                        Console.Write("Type the amount of seconds to add:");
-                        while (int.TryParse(Console.ReadLine(), out s))
-                        {
-                            Console.Write("Invalid day! Type again:");
-                        }
-                        clock.addSeconds(s);
+                    case "ON":
+                        television.TurnOn();
                         break;
-                    case "U":
+                    case "OFF":
+                        television.TurnOff();
+                        break;
+                    case "IC":
+                        television.IncreaseChannel();
+                        break;
+                    case "DC":
+                        television.DecreaseChannel();
+                        break;
+                    case "IV":
+                        television.IncreaseVolume();
+                        break;
+                    case "DV":
+                        television.DecreaseVolume();
+                        break;
                     case "S":
-                        break;
-                    case "R":
-                        clock.reset();
                         break;
                     default:
                         Console.WriteLine("Invalid Option.");
