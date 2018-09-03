@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="POOActivities.Documento">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAEAABAAAQ=</HashCode>
+      <FileName>Day_2018_08_30\Documento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POOActivities.Grafica">
+    <Position X="5" Y="0.5" Width="2" />
+    <InheritanceLine Type="POOActivities.Impressora" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.5" Y="3.188" />
+        <Point X="3.875" Y="3.188" />
+        <Point X="3.875" Y="2.812" />
+        <Point X="5" Y="2.812" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAQAIQAAABAAAAAgAAAIA=</HashCode>
+      <FileName>Day_2018_08_30\Grafica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POOActivities.Impressora">
+    <Position X="2" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAACAAAAAAgBAAAgBACAAAg=</HashCode>
+      <FileName>Day_2018_08_30\Impressora.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
