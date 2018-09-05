@@ -28,14 +28,23 @@ namespace POOActivities
             return prcDocPreto;
         }
 
-        public bool ImprimeDocumento(Documento doc, char tipoImpressao){
+        public bool ImprimeDocumento(Documento doc, char tipoImpressao, out string mensagem){
             bool imprimiuCorretamente;
+            mensagem = "";
             int paginaAtual = 0;
             do
             {
                 imprimiuCorretamente = ImprimePagina(tipoImpressao);
                 paginaAtual++;
             } while (imprimiuCorretamente && paginaAtual < doc.GetQntPaginas());
+
+            if (QntTintaColorida < 100){
+                mensagem += "Tinta colorida acabando! ";
+            }
+            if (QntTintaPreta < 100){
+                mensagem += "Tinta preta acabando!";
+            }
+            return imprimiuCorretamente;
         }
 
         private bool ImprimePagina(char tipoImpressao){
