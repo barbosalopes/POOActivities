@@ -5,36 +5,22 @@ using System.Text;
 
 namespace POOActivities
 {
-    public class Grafica : Impressora
+    public class Grafica
     {
-        private static double TotFatColorido
-        {
-            get => default(int);
-            set
-            {
-            }
-        }
+        private static double totFatColorido;
 
-        private double TotFatPreto
-        {
-            get => default(int);
-            set
-            {
-            }
-        }
+        private static double totFatPreto;
 
-        private Impressora Impressora
-        {
-            get => default(Impressora);
-            set
-            {
-            }
-        }
+        private Impressora impressora;
 
         /// <returns>double</returns>
-        public double FaturaImpressao(Documento documento)
-        {
-            throw new System.NotImplementedException();
+        public double FaturaImpressao(Documento documento, char tipoImpressao){
+            if (tipoImpressao == Impressora.TipoPreta) {
+                return documento.GetQntPaginas() * Impressora.GetPrcDocPreto();
+            } else if (tipoImpressao == Impressora.TipoColorida){ 
+                return documento.GetQntPaginas() * Impressora.GetPrcDocColorido();
+            }
+            throw new Exception("Tipo de impressao nao coberto pela impressora");
         }
 
         public void ImprimeDocumento()

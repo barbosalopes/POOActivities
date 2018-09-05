@@ -7,36 +7,23 @@ namespace POOActivities
 {
     public class Documento
     {
-        private static double PrcDocColorido
-        {
-            get => default(int);
-            set
-            {
-            }
+
+        private int QntPaginas;
+
+        private char Tipo;
+
+        public Documento(int qntPaginas, char tipo){
+            QntPaginas = qntPaginas;
+            Tipo = tipo;
         }
 
-        private static double PrcDocPreto
-        {
-            get => default(int);
-            set
-            {
-            }
+        public int GetQntPaginas(){
+            return QntPaginas;
         }
 
-        private int QntPaginas
-        {
-            get => default(int);
-            set
-            {
-            }
+        public char GetPrcDocPreto(){
+            return Tipo;
         }
-
-        private char Tipo
-        {
-            get => default(int);
-            set
-            {
-            }
-        }
+        
     }
 }
