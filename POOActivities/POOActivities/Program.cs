@@ -11,7 +11,10 @@ namespace POOActivities
     {
 
 
-
+        /// <summary>
+        /// Runs the aplication of the exercises.
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             Exercises e = new Exercises();

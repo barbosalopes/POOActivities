@@ -42,9 +42,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleInterface.cs" />
     <Compile Include="Day_2018_08_30\Documento.cs" />
     <Compile Include="Day_2018_08_30\Grafica.cs" />
     <Compile Include="Day_2018_08_30\Impressora.cs" />
+    <Compile Include="Day_2018_09_20\CartaoDeCredito.cs" />
+    <Compile Include="Day_2018_09_20\Cliente.cs" />
+    <Compile Include="Day_2018_09_20\Conta.cs" />
+    <Compile Include="Day_2018_09_20\ContaCorrente.cs" />
+    <Compile Include="Day_2018_09_20\ContaEspecial.cs" />
+    <Compile Include="Day_2018_09_20\ContaPoupanca.cs" />
+    <Compile Include="Day_2018_09_20\ContaPrevidenciaPrivada.cs" />
+    <Compile Include="Day_2018_09_23\Agencia.cs" />
+    <Compile Include="Day_2018_09_23\CartaoDeCredito.cs" />
+    <Compile Include="Day_2018_09_23\Cliente.cs" />
+    <Compile Include="Day_2018_09_23\Conta.cs" />
+    <Compile Include="Day_2018_09_23\Fatura.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Exercises.cs" />
@@ -58,7 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Day_2018_08_30\ClassDiagram1.cd" />
+    <None Include="Day_2018_08_30\Diagrama.cd" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
